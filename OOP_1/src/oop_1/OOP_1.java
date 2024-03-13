@@ -35,13 +35,13 @@ public class OOP_1 {
                 String nameString = sc.nextLine();
                 
                 System.out.print("Ngay thang nam sinh: ");
-                String birString = sc.nextLine();
+                String birthString = sc.nextLine();
                 
                 System.out.print("Gioi tinh: ");
                 boolean gender = sc.nextBoolean();
                 sc.nextLine();
                 
-                students.add(new Student(birString, nameString, birString, gender));
+                students.add(new Student(UUID.randomUUID().toString(),nameString, birthString, gender));
             }
         }else{
             System.out.println("So luong k hop le!");
@@ -54,9 +54,7 @@ public class OOP_1 {
             System.out.println(student);
         }
     }
-   
-    
-    
+
     
     public static void main(String[] args) {
         // TODO code application logic here
