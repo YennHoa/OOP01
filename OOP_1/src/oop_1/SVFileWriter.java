@@ -20,15 +20,18 @@ public class SVFileWriter {
     }
     
     public void writeToFile(Scanner sc){
-        System.out.println("Nhap ten file: ");
-        String fileName = sc.nextLine();
-        try(FileWriter writer = new FileWriter(fileName)){
-            for(Student student :  students){
-                writer.write(student.toString() + "\n");
-            }writer.flush();
-            System.out.println("Ghi file thanh cong!");
-        } catch (Exception e) {
-            System.out.println("Ghi file bi loi!" + e.getMessage());
+        int n = 0;
+        if(n>=3 && n<=40){
+            System.out.println("Nhap ten file: ");
+            String fileName = sc.nextLine();
+            try(FileWriter writer = new FileWriter(fileName)){
+                for(Student student :  students){
+                    writer.write(student.toString() + "\n");
+                }writer.flush();
+                System.out.println("Ghi file thanh cong!");
+            }catch (Exception e) {
+                System.out.println("Ghi file bi loi!" + e.getMessage());
+            }
         }
     }
 }
