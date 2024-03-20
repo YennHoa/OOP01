@@ -20,7 +20,8 @@ public class SVFileWriter {
     }
     
     public void writeToFile(Scanner sc){
-        int n = 0;
+//        int n = 0;
+        int n = students.size();
         if(n>=3 && n<=40){
             System.out.println("Nhap ten file: ");
             String fileName = sc.nextLine();

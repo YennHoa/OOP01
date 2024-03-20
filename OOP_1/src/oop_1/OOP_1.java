@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
+import static oop_1.Student.createID;
 
 /**
  *
@@ -29,7 +30,8 @@ public class OOP_1 {
             for(int i=0; i<n; i++){
                 System.out.println("Nhap thong tin sinh vien:");
                 
-                System.out.println("ID: "+UUID.randomUUID().toString()); 
+//                System.out.println("ID: "+UUID.randomUUID().toString()); 
+                System.out.println("ID: " + createID());
                 
                 System.out.print("Ho ten: ");
                 String nameString = sc.nextLine();
@@ -41,7 +43,7 @@ public class OOP_1 {
                 boolean gender = sc.nextBoolean();
                 sc.nextLine();
                 
-                students.add(new Student(UUID.randomUUID().toString(),nameString, birthString, gender));
+                students.add(new Student(createID(),nameString, birthString, gender));
             }
         }else{
             System.out.println("So luong k hop le!");

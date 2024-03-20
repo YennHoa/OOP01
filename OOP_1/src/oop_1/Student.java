@@ -5,6 +5,7 @@
 package oop_1;
 
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  *
@@ -16,12 +17,19 @@ public class Student {
     private String birthString;
     private boolean gender;
     
+    private static AtomicLong idCounter = new AtomicLong(1000);
+    
+    public static String createID(){
+        return String.valueOf(idCounter.getAndIncrement());
+    }
+    
     public Student(){
         
     }
     
     public Student(String idString, String nameString, String birthString, boolean gender){
-        this.idString=UUID.randomUUID().toString();
+//        this.idString=UUID.randomUUID().toString();
+        this.idString=createID();
         this.nameString=nameString;
         this.birthString=birthString;
         this.gender=gender;
@@ -65,6 +73,6 @@ public class Student {
      */
     @Override
     public String toString(){
-        return "ID: " + UUID.randomUUID().toString() + ", Ho ten: " + nameString + ", Ngay Thang Nam Sinh: " + birthString + ", Gioi tinh: " + (gender ? "Nam" : "Nu");    
+        return "ID: " + idString + ", Ho ten: " + nameString + ", Ngay Thang Nam Sinh: " + birthString + ", Gioi tinh: " + (gender ? "Nam" : "Nu");    
     }
 }
