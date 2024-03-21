@@ -11,7 +11,7 @@ package animal;
 public class Mastiff extends Dog{
     private String howlString;
     
-    public Mastiff(String nameString, int age, double height, double weight){
+    public Mastiff(String nameString, int age, double height, double weight, String howlString){
         super(nameString, age, height, weight);
         this.howlString = howlString;
     }
@@ -26,7 +26,7 @@ public class Mastiff extends Dog{
     
     @Override
     public void bark(){
-        
+        System.out.println(howlString);
     }
 
 }
