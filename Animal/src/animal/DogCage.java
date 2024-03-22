@@ -26,7 +26,7 @@ public class DogCage {
             dogs.add(dog);
             System.out.println("\n" + dog.getNameString() + " added to the cage!");
         }else{
-            System.out.println("Can't add " + dog.getNameString() + ". Cage is full!");
+            System.out.println("\nCan't add " + dog.getNameString() + ". Cage is full!");
         }
     }
     
