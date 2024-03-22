@@ -10,6 +10,6 @@ package animal;
  */
 public class AlaskanMalamute extends Mastiff{
     public AlaskanMalamute(String nameString, int age, double height, double weight){
-        super(nameString, age, height, weight, "Woof Woof Woof Woof");
+        super(nameString, age, height, weight, "Woof Woof Huuu Huuu");
     }
 }

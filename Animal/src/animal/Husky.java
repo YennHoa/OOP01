@@ -10,7 +10,7 @@ package animal;
  */
 public class Husky extends Mastiff{
     public Husky(String nameString, int age, double height, double weight){
-        super(nameString, age, height, weight, "Woooooo Woooooo Woooooo");
+        super(nameString, age, height, weight, "Woooooo Woooooo Huuu Huuu");
     }
     
 }
