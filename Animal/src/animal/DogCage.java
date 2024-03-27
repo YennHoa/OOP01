@@ -4,9 +4,10 @@
  */
 package animal;
 
-import animal.Husky;
+//import animal.Husky;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -46,59 +47,126 @@ public class DogCage {
         }
     }
     
+//    public double getTotalWeight(){
+//        double totalWeight = 0;
+//        for(Dog dog : dogs){
+//            totalWeight = totalWeight + dog.getWeight();
+//        }
+//        return totalWeight;
+//    }
+    
+    //Stream API
     public double getTotalWeight(){
-        double totalWeight = 0;
-        for(Dog dog : dogs){
-            totalWeight = totalWeight + dog.getWeight();
-        }
-        return totalWeight;
+        return dogs.stream()
+                .mapToDouble(Dog::getWeight)
+                .sum();  
     }
     
+    
+    
+//    public void listPitbull(){
+//        System.out.print("\nPitbull in the cage! ");
+//        for(Dog dog : dogs){
+//            if(dog instanceof PitBull){
+//                System.out.println("It's " + dog.getNameString());
+//            }
+//        }
+//    }
+    
+    //Stream API
     public void listPitbull(){
-        System.out.print("\nPitbull in the cage! ");
-        for(Dog dog : dogs){
-            if(dog instanceof PitBull){
-                System.out.println("It's " + dog.getNameString());
-            }
-        }
+        List<String> pitbull = dogs.stream()
+                .filter(dog -> dog instanceof PitBull)
+                .map(Dog::getNameString)
+                .collect(Collectors.toList());
+        System.out.print("\nPitbul in the cage! ");
+        System.out.println("It's " + pitbull);
     }
     
+    
+
+//    public void listChihuahua(){
+//        System.out.print("Chihuahua in the cage! ");
+//        for(Dog dog :dogs){
+//            if(dog instanceof Chihuahua){
+//                System.out.println("It's " + dog.getNameString());
+//            }
+//        }   
+//    }
+    
+    //Stream API
     public void listChihuahua(){
-        System.out.print("Chihuahua in the cage! ");
-        for(Dog dog :dogs){
-            if(dog instanceof Chihuahua){
-                System.out.println("It's " + dog.getNameString());
-            }
-        }   
+        List<String> chihuahua = dogs.stream()
+                .filter(dog -> dog instanceof Chihuahua)
+                .map(Dog::getNameString)
+                .collect(Collectors.toList());
+        System.out.print("\nChihuahua in the cage! ");
+        System.out.println("It's " + chihuahua);
     }
     
+    
+    
+//    public void listBegie(){
+//        System.out.print("Begie in the cage! ");
+//        for(Dog dog : dogs){
+//            if(dog instanceof Begie){
+//                System.out.println("It's " + dog.getNameString());
+//            }
+//        }
+//    }
+    
+    //Stream API
     public void listBegie(){
-        System.out.print("Begie in the cage! ");
-        for(Dog dog : dogs){
-            if(dog instanceof Begie){
-                System.out.println("It's " + dog.getNameString());
-            }
-        }
+        List<String> begie = dogs.stream()
+                .filter(dog -> dog instanceof Begie)
+                .map(Dog::getNameString)
+                .collect(Collectors.toList());
+        System.out.print("\nBegie in the cage! ");
+        System.out.println("It's " + begie);
     }
     
-    public void listHusky(){
-        System.out.print("Husky in the cage! ");
-        for(Dog dog : dogs){
-            if(dog instanceof Husky){
-                System.out.println("It's " + dog.getNameString());
-                }else{
-                System.out.println("null");
-            }
-            }
-        }
     
+
+//    public void listHusky(){
+//        System.out.print("Husky in the cage! ");
+//        for(Dog dog : dogs){
+//            if(dog instanceof Husky){
+//                System.out.println("It's " + dog.getNameString());
+//                }else{
+//                System.out.println("null");
+//            }
+//            }
+//        }
+    
+    //Stream API
+    public void listHusky(){
+        List<String> husky = dogs.stream()
+                .filter(dog -> dog instanceof Husky)
+                .map(Dog::getNameString)
+                .collect(Collectors.toList());
+        System.out.println("\nHusky in the cage! ");
+        System.out.println("It's " + husky);
+    }
+    
+    
+    
+//    public void listAlaskanMalamute(){
+//        System.out.print("Alaskan in the cage! ");
+//        for(Dog dog : dogs){
+//            if(dog instanceof AlaskanMalamute){
+//                System.out.println("It's " + dog.getNameString());
+//            }
+//        }
+//    }
+    
+    //Stream API
     public void listAlaskanMalamute(){
-        System.out.print("Alaskan in the cage! ");
-        for(Dog dog : dogs){
-            if(dog instanceof AlaskanMalamute){
-                System.out.println("It's " + dog.getNameString());
-            }
-        }
+        List<String> alaskanmalamute = dogs.stream()
+                .filter(dog -> dog instanceof AlaskanMalamute)
+                .map(Dog::getNameString)
+                .collect(Collectors.toList());
+        System.out.print("\nAlaskanMalamute in the cage! ");
+        System.out.println("It's " + alaskanmalamute);
     }
  
 }
